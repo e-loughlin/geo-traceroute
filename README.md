@@ -35,7 +35,7 @@ cd geo-traceroute
 To use this tool, run the following command in your terminal:
 
 ```bash
-python geo_ping.py <IP_or_URL>
+python geo_traceroute.py <IP_or_URL>
 ```
 
 Where `<IP_or_URL>` can be an IP address or a domain URL (e.g., `8.8.8.8` or `google.com`).
@@ -43,14 +43,16 @@ Where `<IP_or_URL>` can be an IP address or a domain URL (e.g., `8.8.8.8` or `go
 Example:
 
 ```bash
-python geo_ping.py 8.8.8.8
+python geo_traceroute.py 8.8.8.8
 ```
+
+![Sample Output](./docs/sample.png)
 
 The program will perform a trace route to the given IP or URL, get the geolocation for each IP address along the way, and display the results on a world map.
 
 ## File Descriptions
 
-- **`geo_ping.py`**: The main script that takes an IP address or URL as input, performs a trace route, fetches geolocation data, and draws the map with the locations.
+- **`geo_traceroute.py`**: The main script that takes an IP address or URL as input, performs a trace route, fetches geolocation data, and draws the map with the locations.
 - **`trace_route.py`**: Contains the `trace_route()` function, which performs a trace route and returns a list of IP addresses.
 - **`ip_geolocation.py`**: Defines the `IPAddress` and `Coordinates` classes. `IPAddress` fetches the geolocation of an IP address using a free API (ip-api.com), and `Coordinates` represents geographical coordinates.
 - **`map.py`**: Defines an abstract base class `AbstractMap` and the `WorldMap` class that uses Cartopy to plot locations on a world map.
